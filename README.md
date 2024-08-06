@@ -1,7 +1,7 @@
 # ray-caastor by [@joey12198](https://github.com/joey121982/)
 
 <p> a simple ray caster made using pygame </p>
----
+
 ## Prerequisites
 
 To run this project, you will need to install ``` pygame ```.
