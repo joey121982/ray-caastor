@@ -1,10 +1,11 @@
 import pygame
 
 class Controls:
-    def __init__(self, FISH_EYE_EFFECT, SHADING_EFFECT, SHADING_DISTANCE) -> None:
+    def __init__(self, FISH_EYE_EFFECT, SHADING_EFFECT, SHADING_DISTANCE, MAP_MODE) -> None:
         self.fish_eye_effect = FISH_EYE_EFFECT
         self.shading_effect = SHADING_EFFECT
         self.shading_distance = SHADING_DISTANCE
+        self.map_mode = MAP_MODE
     
     def update(self):
         keys = pygame.key.get_pressed()
@@ -13,6 +14,8 @@ class Controls:
             self.fish_eye_effect = not self.fish_eye_effect
         if keys[pygame.K_F2]:
             self.shading_effect = not self.shading_effect
+        if keys[pygame.K_F3]:
+            self.map_mode = not self.map_mode
         if keys[pygame.K_PAGEUP]:
             self.shading_distance += 10
         if keys[pygame.K_PAGEDOWN]:

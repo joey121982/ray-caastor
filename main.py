@@ -10,7 +10,7 @@ screen = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
 
 map = Map()
 player = Player()
-controls = Controls(FISH_EYE_EFFECT, SHADING_EFFECT, SHADING_DISTANCE)
+controls = Controls(FISH_EYE_EFFECT, SHADING_EFFECT, SHADING_DISTANCE, MAP_MODE)
 raycaster = Raycaster(player, map, controls)
 
 clock = pygame.time.Clock()
@@ -39,8 +39,10 @@ while True:
 
     raycaster.castAllRays()
 
-    # map.render(screen)
-    # player.render(screen)
+    if controls.map_mode:
+        map.render(screen)
+        player.render(screen)
+    
     raycaster.render(screen)
 
     pygame.display.update()

@@ -17,4 +17,5 @@ NUM_RAYS = int(WINDOW_WIDTH // RES)
 
 FISH_EYE_EFFECT = False
 SHADING_EFFECT = True
-SHADING_DISTANCE = 10 # 10 - darker, 60 - normal, 100 - lighter  -- change to anything between 0 and 255
+MAP_MODE = False
+SHADING_DISTANCE = 60 # 10 - darker, 60 - normal, 100 - lighter  -- change to anything between 0 and 255
