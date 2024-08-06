@@ -21,14 +21,14 @@ class Player:
         self.walkDirection = 0
 
         # !TODO: add WASD
-        if keys[pygame.K_RIGHT]: 
+        if keys[pygame.K_RIGHT] or keys[pygame.K_d]: 
             self.turnDirection = 1
-        if keys[pygame.K_LEFT]:
+        if keys[pygame.K_LEFT] or keys[pygame.K_a]:
             self.turnDirection = -1
 
-        if keys[pygame.K_UP]:
+        if keys[pygame.K_UP] or keys[pygame.K_w]:
             self.walkDirection = 1
-        if keys[pygame.K_DOWN]:
+        if keys[pygame.K_DOWN] or keys[pygame.K_s]:
             self.walkDirection = -1
 
         moveStep = self.walkDirection * self.moveSpeed
@@ -38,4 +38,4 @@ class Player:
 
     def render(self, screen):
         pygame.draw.circle(screen, (0, 255, 0), (self.x, self.y), self.radius)
-        pygame.draw.line(screen, (255, 0, 0), (self.x, self.y), (self.x + math.cos(self.rotationAngle) * 50, self.y + math.sin(self.rotationAngle) * 50))
+        pygame.draw.line(screen, (0, 0, 255), (self.x, self.y), (self.x + math.cos(self.rotationAngle) * 50, self.y + math.sin(self.rotationAngle) * 50))
